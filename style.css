@@ -23,9 +23,10 @@ body {
     background-color: var(--body-bg);
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Changed to align-items: flex-start */
+    min-height: 100vh; /* Changed from height to min-height */
     margin: 0;
+    padding: 20px 0; /* Add some vertical padding for overall content */
     background-image: var(--body-pattern);
     transition: background-color 0.3s ease;
 }

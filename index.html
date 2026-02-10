@@ -15,6 +15,26 @@
         <button id="generate-btn">Generate Numbers</button>
         <p><a href="contact.html" style="color: var(--text-color); margin-top: 20px; display: inline-block; transition: color 0.3s ease;">Partnership Inquiry</a></p>
     </div>
+
+    <div id="disqus_thread" style="margin-top: 50px; width: 90%; max-width: 800px; margin-left: auto; margin-right: auto; padding: 20px; background-color: var(--container-bg); border-radius: 16px; box-shadow: 0 10px 20px var(--shadow-color), 0 6px 6px var(--shadow-color); transition: background-color 0.3s ease, box-shadow 0.3s ease;"></div>
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+        var disqus_config = function () {
+        this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = window.location.pathname; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://productbuilder-im6zmqtvod.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <script src="main.js"></script>
 </body>
 </html>

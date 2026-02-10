@@ -1,27 +1,82 @@
+:root {
+    --bg-color: #f0f2f5;
+    --container-bg: #ffffff;
+    --text-color: #333;
+    --number-bg: #6a0572;
+    --number-color: #fff;
+    --bonus-bg: #ff6f61;
+    --button-bg: #007bff;
+    --button-hover-bg: #0056b3;
+    --bonus-plus-color: #555;
+}
+
+body.dark-mode {
+    --bg-color: #2c2c2c;
+    --container-bg: #3c3c3c;
+    --text-color: #f0f0f0;
+    --number-bg: #4a148c; /* Darker deep purple */
+    --number-color: #fff;
+    --bonus-bg: #d32f2f; /* Darker coral */
+    --button-bg: #1a73e8; /* Google blue for dark mode */
+    --button-hover-bg: #0f62fe;
+    --bonus-plus-color: #bbb;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f0f2f5;
+    background-color: var(--bg-color);
     font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: var(--container-bg);
     padding: 30px 40px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 500px;
     width: 100%;
+    position: relative; /* For positioning the theme toggle */
+    transition: background-color 0.3s ease;
+}
+
+.theme-switch-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+#themeToggle {
+    background-color: var(--button-bg);
+    color: var(--number-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    outline: none;
+}
+
+#themeToggle:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-1px);
+}
+
+#themeToggle:active {
+    transform: translateY(0);
 }
 
 h1 {
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 30px;
     font-size: 2em;
+    transition: color 0.3s ease;
 }
 
 .lotto-numbers {
@@ -44,12 +99,12 @@ h1 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #6a0572; /* Deep purple */
-    color: #fff;
+    background-color: var(--number-bg);
+    color: var(--number-color);
     font-size: 1.8em;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .bonus-number-container {
@@ -60,28 +115,29 @@ h1 {
 
 .bonus-plus {
     font-size: 2em;
-    color: #555;
+    color: var(--bonus-plus-color);
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .bonus-number {
-    background-color: #ff6f61; /* Coral */
+    background-color: var(--bonus-bg);
 }
 
 #generateBtn {
-    background-color: #007bff; /* Blue */
-    color: white;
+    background-color: var(--button-bg);
+    color: var(--number-color);
     border: none;
     padding: 12px 25px;
     border-radius: 8px;
     font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
     outline: none;
 }
 
 #generateBtn:hover {
-    background-color: #0056b3;
+    background-color: var(--button-hover-bg);
     transform: translateY(-2px);
 }
 

@@ -1,36 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generateBtn');
     const mainNumbersContainer = document.querySelector('.main-numbers');
-    const bonusNumberElement = document.querySelector('.bonus-number');
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
+    const bonusNumberContainer = document.querySelector('.bonus-number .number');
 
     generateBtn.addEventListener('click', generateLottoNumbers);
-    themeToggle.addEventListener('click', toggleTheme);
-
-    // Load theme preference from localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-mode');
-    }
-
-    function toggleTheme() {
-        body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-            themeToggle.textContent = 'Light Mode';
-        } else {
-            localStorage.setItem('theme', 'light');
-            themeToggle.textContent = 'Dark Mode';
-        }
-    }
-
-    // Set initial toggle button text
-    if (body.classList.contains('dark-mode')) {
-        themeToggle.textContent = 'Light Mode';
-    } else {
-        themeToggle.textContent = 'Dark Mode';
-    }
 
     function generateLottoNumbers() {
         const numbers = new Set();
@@ -48,12 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayNumbers(mainNumbers, bonusNumber) {
-        mainNumbersContainer.querySelectorAll('.number').forEach((span, index) => {
+        const mainNumberSpans = mainNumbersContainer.querySelectorAll('.number');
+        mainNumberSpans.forEach((span, index) => {
             span.textContent = mainNumbers[index];
+            span.classList.remove('animate');
+            void span.offsetWidth; // Trigger reflow
+            span.classList.add('animate');
         });
-        bonusNumberElement.textContent = bonusNumber;
+        
+        bonusNumberContainer.textContent = bonusNumber;
+        bonusNumberContainer.classList.remove('animate');
+        void bonusNumberContainer.offsetWidth; // Trigger reflow
+        bonusNumberContainer.classList.add('animate');
     }
 
-    // Generate numbers on initial load
+    // Initial generation
     generateLottoNumbers();
 });

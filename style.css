@@ -1,210 +1,71 @@
-:root {
-    --bg-color: #f0f2f5;
-    --text-color: #333;
-    --container-bg: #fff;
-    --h1-color: #2c3e50;
-    --number-bg: #3498db;
-    --bonus-plus-color: #e74c3c;
-    --bonus-number-bg: #e74c3c;
-    --button-bg: #2ecc71;
-    --button-hover-bg: #27ae60;
-    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --form-border-color: #ddd;
-    --input-bg: #f8f8f8;
-    --input-border: #ccc;
-    --input-focus-border: #3498db;
-}
-
-body[data-theme="dark"] {
-    --bg-color: #2c3e50;
-    --text-color: #ecf0f1;
-    --container-bg: #34495e;
-    --h1-color: #ecf0f1;
-    --number-bg: #e67e22;
-    --bonus-plus-color: #f1c40f;
-    --bonus-number-bg: #f39c12;
-    --button-bg: #27ae60;
-    --button-hover-bg: #2ecc71;
-    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    --form-border-color: #555;
-    --input-bg: #4a627a;
-    --input-border: #777;
-    --input-focus-border: #f39c12;
-}
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: var(--bg-color);
+    background-color: #f0f2f5;
     font-family: 'Arial', sans-serif;
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333;
 }
 
 .container {
-    background-color: var(--container-bg);
+    background-color: #fff;
     padding: 40px 60px;
     border-radius: 15px;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    max-width: 800px;
+    margin: 20px auto;
 }
 
 h1 {
-    color: var(--h1-color);
+    color: #2c3e50;
     margin-bottom: 30px;
     font-size: 2.5em;
-    transition: color 0.3s ease;
 }
 
-.lotto-numbers {
+.cuisine-selection {
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-    gap: 10px; /* Space between main numbers and bonus number */
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.main-numbers {
-    display: flex;
-    gap: 10px; /* Space between main numbers */
-    margin-right: 20px; /* Space between main numbers group and bonus */
-}
-
-.number {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: var(--number-bg);
-    color: #fff;
-    font-size: 1.8em;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out, background-color 0.3s ease;
-    opacity: 0;
-    transform: scale(0.5);
-}
-
-.number.animate {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.bonus-number {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
-
-.bonus-number .plus {
-    font-size: 2em;
-    font-weight: bold;
-    color: var(--bonus-plus-color);
-    margin-right: 10px;
-    transition: color 0.3s ease;
-}
-
-.bonus-number .number {
-    background-color: var(--bonus-number-bg); /* Different color for bonus */
-    transition: background-color 0.3s ease;
-}
-
-button {
-    background-color: var(--button-bg);
+.cuisine-btn {
+    background-color: #3498db;
     color: #fff;
     border: none;
-    padding: 15px 30px;
+    padding: 12px 25px;
     border-radius: 8px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-    background-color: var(--button-hover-bg);
-    transform: translateY(-2px);
-}
-
-button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-#themeToggleBtn {
-    margin-left: 10px;
-    padding: 15px 20px;
-    font-size: 1em;
-    background-color: #95a5a6;
-    color: #fff;
-}
-
-#themeToggleBtn:hover {
-    background-color: #7f8c8d;
-}
-
-/* Contact Form Styling */
-.contact-form-section {
-    margin-top: 50px;
-    padding-top: 30px;
-    border-top: 1px solid var(--form-border-color);
-}
-
-.contact-form-section h2 {
-    color: var(--h1-color);
-    margin-bottom: 25px;
-    font-size: 2em;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.contact-form label {
-    font-weight: bold;
-    color: var(--text-color);
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    padding: 12px;
-    border: 1px solid var(--input-border);
-    border-radius: 5px;
-    font-size: 1em;
-    background-color: var(--input-bg);
-    color: var(--text-color);
-    transition: border-color 0.3s ease, background-color 0.3s ease;
-}
-
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
-    border-color: var(--input-focus-border);
-    outline: none;
-}
-
-.contact-form button[type="submit"] {
-    margin-top: 20px;
-    padding: 15px 25px;
-    font-size: 1.1em;
-    background-color: #3498db; /* A different color for submit button */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.contact-form button[type="submit"]:hover {
+.cuisine-btn:hover {
     background-color: #2980b9;
     transform: translateY(-2px);
+}
+
+.cuisine-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#menuRecommendation {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2ecc71;
+    min-height: 1.8em; /* To prevent layout shift */
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #e8f8f5;
+    border-radius: 10px;
+    border: 1px solid #d4edda;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

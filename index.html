@@ -3,44 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로또 번호 추첨기</title>
+    <title>저녁 메뉴 추천</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="light">
+<body>
     <div class="container">
-        <h1>로또 번호 추첨기</h1>
-        <div class="lotto-numbers">
-            <div class="main-numbers">
-                <span class="number"></span>
-                <span class="number"></span>
-                <span class="number"></span>
-                <span class="number"></span>
-                <span class="number"></span>
-                <span class="number"></span>
-            </div>
-            <div class="bonus-number">
-                <span class="plus">+</span>
-                <span class="number"></span>
-            </div>
+        <h1 id="mainTitle">저녁 메뉴 추천</h1>
+        <div class="cuisine-selection">
+            <button class="cuisine-btn" data-cuisine="korean">한식</button>
+            <button class="cuisine-btn" data-cuisine="chinese">중식</button>
+            <button class="cuisine-btn" data-cuisine="japanese">일식</button>
+            <button class="cuisine-btn" data-cuisine="western">양식</button>
+            <button class="cuisine-btn" data-cuisine="other">기타</button>
         </div>
-        <button id="generateBtn">번호 생성</button>
-        <button id="themeToggleBtn">테마 토글</button>
-
-        <section class="contact-form-section">
-            <h2>문의하기</h2>
-            <form action="https://formspree.io/f/mwvnpzna" method="POST" class="contact-form">
-                <label for="email">이메일:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="name">이름:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="message">메시지:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit">문의 보내기</button>
-            </form>
-        </section>
+        <p id="menuRecommendation">버튼을 눌러 메뉴를 추천받으세요!</p>
     </div>
     <script src="main.js"></script>
 </body>

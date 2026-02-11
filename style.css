@@ -1,26 +1,55 @@
+:root {
+    --bg-color: #f0f2f5;
+    --text-color: #333;
+    --container-bg: #fff;
+    --h1-color: #2c3e50;
+    --number-bg: #3498db;
+    --bonus-plus-color: #e74c3c;
+    --bonus-number-bg: #e74c3c;
+    --button-bg: #2ecc71;
+    --button-hover-bg: #27ae60;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="dark"] {
+    --bg-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --container-bg: #34495e;
+    --h1-color: #ecf0f1;
+    --number-bg: #e67e22;
+    --bonus-plus-color: #f1c40f;
+    --bonus-number-bg: #f39c12;
+    --button-bg: #27ae60;
+    --button-hover-bg: #2ecc71;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f0f2f5;
+    background-color: var(--bg-color);
     font-family: 'Arial', sans-serif;
-    color: #333;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
-    background-color: #fff;
+    background-color: var(--container-bg);
     padding: 40px 60px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 h1 {
-    color: #2c3e50;
+    color: var(--h1-color);
     margin-bottom: 30px;
     font-size: 2.5em;
+    transition: color 0.3s ease;
 }
 
 .lotto-numbers {
@@ -44,12 +73,12 @@ h1 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #3498db;
+    background-color: var(--number-bg);
     color: #fff;
     font-size: 1.8em;
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out, background-color 0.3s ease;
     opacity: 0;
     transform: scale(0.5);
 }
@@ -68,16 +97,18 @@ h1 {
 .bonus-number .plus {
     font-size: 2em;
     font-weight: bold;
-    color: #e74c3c;
+    color: var(--bonus-plus-color);
     margin-right: 10px;
+    transition: color 0.3s ease;
 }
 
 .bonus-number .number {
-    background-color: #e74c3c; /* Different color for bonus */
+    background-color: var(--bonus-number-bg); /* Different color for bonus */
+    transition: background-color 0.3s ease;
 }
 
 button {
-    background-color: #2ecc71;
+    background-color: var(--button-bg);
     color: #fff;
     border: none;
     padding: 15px 30px;
@@ -86,14 +117,27 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 button:hover {
-    background-color: #27ae60;
+    background-color: var(--button-hover-bg);
     transform: translateY(-2px);
 }
 
 button:active {
     transform: translateY(0);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#themeToggleBtn {
+    margin-left: 10px;
+    padding: 15px 20px;
+    font-size: 1em;
+    background-color: #95a5a6;
+    color: #fff;
+}
+
+#themeToggleBtn:hover {
+    background-color: #7f8c8d;
 }

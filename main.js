@@ -1,9 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generateBtn');
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
     const mainNumbersContainer = document.querySelector('.main-numbers');
     const bonusNumberContainer = document.querySelector('.bonus-number .number');
+    const body = document.body;
+
+    // Load theme preference from localStorage or default to 'light'
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', currentTheme);
 
     generateBtn.addEventListener('click', generateLottoNumbers);
+
+    themeToggleBtn.addEventListener('click', () => {
+        const newTheme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
 
     function generateLottoNumbers() {
         const numbers = new Set();
@@ -35,6 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         bonusNumberContainer.classList.add('animate');
     }
 
-    // Initial generation
+    // Initial generation after theme is loaded
     generateLottoNumbers();
 });

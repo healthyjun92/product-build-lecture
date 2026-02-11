@@ -65,7 +65,7 @@ h1 {
     margin-left: 20px;
 }
 
-.bonus-number span {
+.bonus-number .plus {
     font-size: 2em;
     font-weight: bold;
     color: #e74c3c;

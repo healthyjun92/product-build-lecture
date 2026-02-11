@@ -137,3 +137,15 @@ button:disabled {
 .contact-form-section button[type="submit"]:hover {
     background-color: #218838; /* Darker green on hover */
 }
+
+/* Disqus Thread Specific Styles */
+#disqus_thread {
+    width: 100%;
+    max-width: 800px; /* Make it wider than the form */
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 50px; /* Add some space at the bottom of the page */
+}

@@ -1,6 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cuisineButtons = document.querySelectorAll('.cuisine-btn');
     const menuRecommendation = document.getElementById('menuRecommendation');
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const body = document.body;
+
+    // Theme Toggle Logic
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', currentTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+        const newTheme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
 
     const menus = {
         korean: [

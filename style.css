@@ -1,28 +1,57 @@
+:root {
+    --bg-color: #f0f2f5;
+    --text-color: #333;
+    --container-bg: #fff;
+    --h1-color: #2c3e50;
+    --btn-bg: #3498db;
+    --btn-hover-bg: #2980b9;
+    --menu-recommendation-color: #2ecc71;
+    --menu-recommendation-bg: #e8f8f5;
+    --menu-recommendation-border: #d4edda;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="dark"] {
+    --bg-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --container-bg: #34495e;
+    --h1-color: #ecf0f1;
+    --btn-bg: #e67e22;
+    --btn-hover-bg: #d35400;
+    --menu-recommendation-color: #f1c40f;
+    --menu-recommendation-bg: #4a627a;
+    --menu-recommendation-border: #f39c12;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f0f2f5;
+    background-color: var(--bg-color);
     font-family: 'Arial', sans-serif;
-    color: #333;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
-    background-color: #fff;
+    background-color: var(--container-bg);
     padding: 40px 60px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     text-align: center;
     max-width: 800px;
     margin: 20px auto;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-h1 {
-    color: #2c3e50;
+#mainTitle {
+    color: var(--h1-color);
     margin-bottom: 30px;
     font-size: 2.5em;
+    transition: color 0.3s ease;
 }
 
 .cuisine-selection {
@@ -34,7 +63,7 @@ h1 {
 }
 
 .cuisine-btn {
-    background-color: #3498db;
+    background-color: var(--btn-bg);
     color: #fff;
     border: none;
     padding: 12px 25px;
@@ -46,7 +75,7 @@ h1 {
 }
 
 .cuisine-btn:hover {
-    background-color: #2980b9;
+    background-color: var(--btn-hover-bg);
     transform: translateY(-2px);
 }
 
@@ -58,14 +87,26 @@ h1 {
 #menuRecommendation {
     font-size: 1.8em;
     font-weight: bold;
-    color: #2ecc71;
+    color: var(--menu-recommendation-color);
     min-height: 1.8em; /* To prevent layout shift */
     margin-top: 40px;
     padding: 20px;
-    background-color: #e8f8f5;
+    background-color: var(--menu-recommendation-bg);
     border-radius: 10px;
-    border: 1px solid #d4edda;
+    border: 1px solid var(--menu-recommendation-border);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#themeToggleBtn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1em;
+    background-color: #95a5a6; /* Specific color for theme toggle */
+}
+
+#themeToggleBtn:hover {
+    background-color: #7f8c8d;
 }

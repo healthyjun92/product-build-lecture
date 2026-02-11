@@ -149,3 +149,27 @@ button:disabled {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-bottom: 50px; /* Add some space at the bottom of the page */
 }
+
+/* Info Sections (About Us, Privacy Policy) */
+.info-section {
+    width: 100%;
+    max-width: 800px; /* Same width as Disqus thread for consistency */
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.info-section h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+.info-section p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #444;
+}
